@@ -2,126 +2,788 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Edge Trading Academy | Forex Course in Dubai</title>
-<meta name="description" content="Mentor-led Forex course in Dubai. AED 700 including a $100 funded trading account. Chat with us on WhatsApp.">
-<meta name="theme-color" content="#0B0F0F">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Edge Academy Enquiry</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#08E186">
+<meta property="og:title" content="Edge Trading Academy – Learn Forex in Dubai">
+<meta property="og:description" content="Complete basic-to-advanced Forex course for AED 700. Send your details and our team will contact you on WhatsApp.">
+<meta property="og:image" content="assets/icon-512.png">
+<meta name="description" content="Learn Forex as a practical skill with Edge Trading Academy, Dubai. Complete basic-to-advanced course for AED 700. Leave your details and our team will contact you on WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-body{margin:0;background:#0B0F0F}
-a{color:#F1F7F7}a:hover{color:#08E186}
+/* Layout: bright white prop-firm style page. Soft mint washes, big rounded white cards, pill buttons,
+   one deep-green band for the closing CTA. Hero = copy + form (form first on phones). */
+:root{
+  --bg:#FFFFFF;
+  --wash:#F3F8F6;          /* soft section background */
+  --wash-2:#E8F5EF;
+  --line:#E2ECE8;
+  --line-strong:#CFDDD8;
+  --fg:#0B1F1C;            /* near-black teal text */
+  --muted:#5A6E69;
+  --accent:#08E186;        /* edge green: fills & buttons */
+  --accent-ink:#03875A;    /* green for text on white */
+  --accent-soft:#E3FBF0;
+  --emerald:#03624C;
+  --deep:#021A1A;
+  --field:#F7FAF9;
+  --field-line:#D5E2DE;
+  --error:#D93A3F;
+  --font:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --r-sm:12px; --r-md:20px; --r-lg:28px;
+  --shadow:0 1px 2px rgba(11,31,28,.04),0 12px 32px -12px rgba(11,31,28,.12);
+  --shadow-lg:0 2px 4px rgba(11,31,28,.04),0 40px 80px -30px rgba(3,98,76,.28);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{line-height:1.08;letter-spacing:-.03em;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:720px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+:focus-visible{outline:2px solid var(--accent-ink);outline-offset:3px;border-radius:6px}
+.hl{color:var(--accent-ink)}
+
+/* ---------- Nav ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(255,255,255,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.nav.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px -18px rgba(11,31,28,.3)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.logo img{height:38px;width:auto;display:block}
+.nav-links{display:none;gap:6px;font-size:14.5px;font-weight:600;color:var(--muted);background:var(--wash);border:1px solid var(--line);padding:5px;border-radius:999px}
+.nav-links a{text-decoration:none;padding:7px 14px;border-radius:999px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--fg);background:#fff;box-shadow:0 1px 3px rgba(11,31,28,.08)}
+@media (min-width:860px){.nav-links{display:flex}}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 15px/1 var(--font);text-decoration:none;border-radius:999px;padding:14px 22px;border:1px solid transparent;cursor:pointer;transition:transform .25s var(--ease),background .25s,box-shadow .25s}
+.btn-primary{background:var(--accent);color:var(--deep);box-shadow:inset 0 -2px 0 rgba(3,98,76,.18)}
+.btn-primary:hover{box-shadow:0 10px 28px -10px rgba(8,225,134,.8),inset 0 -2px 0 rgba(3,98,76,.18);transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line-strong);color:var(--fg);background:#fff}
+.btn-ghost:hover{border-color:var(--fg)}
+.btn .arr{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--deep);color:var(--accent);font-size:12px;transition:transform .25s var(--ease)}
+.btn-ghost .arr{background:var(--wash-2);color:var(--accent-ink)}
+.btn:hover .arr{transform:rotate(45deg)}
+
+/* ---------- Eyebrow ---------- */
+.eyebrow{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--font);color:var(--emerald);padding:7px 14px 7px 8px;border:1px solid #C6EEDB;border-radius:999px;background:var(--accent-soft)}
+.eyebrow .dot{width:18px;height:18px;border-radius:50%;background:var(--accent);position:relative;flex:0 0 auto}
+.eyebrow .dot::after{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--deep)}
+.eyebrow .dot::before{content:"";position:absolute;inset:0;border-radius:50%;animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(8,225,134,.55)}70%{box-shadow:0 0 0 8px rgba(8,225,134,0)}100%{box-shadow:0 0 0 0 rgba(8,225,134,0)}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding-block:36px 64px;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:radial-gradient(60% 60% at 85% 10%,#DDF8EA 0%,transparent 70%),radial-gradient(50% 50% at 0% 0%,#F0FAF5 0%,transparent 70%)}
+.hero-bg::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 60% at 30% 20%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 30% 20%,#000 20%,transparent 75%);opacity:.7}
+.hero-line{position:absolute;left:0;right:0;bottom:4%;width:100%;height:42%;opacity:.9}
+.hero-line path{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 3.2s .4s var(--ease) forwards}
+.hero-line .area{fill:url(#g);stroke:none;opacity:0;animation:fade 1.6s 1.8s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+
+.hero-grid{display:grid;gap:32px;grid-template-areas:"copy" "form" "facts"}
+@media (min-width:980px){.hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);grid-template-areas:"copy form" "facts form";column-gap:56px;row-gap:40px;align-items:start}.hero{padding-block:64px 96px}}
+.hero-copy{grid-area:copy;display:flex;flex-direction:column;gap:22px;min-width:0}
+.hero h1{font-size:clamp(42px,6.4vw,76px);font-weight:800;letter-spacing:-.045em;color:var(--fg)}
+.hero h1 em{font-style:normal;display:block;color:var(--accent-ink);background:linear-gradient(90deg,#03875A,#06B970);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lede{font-size:clamp(16px,1.6vw,18px);color:var(--muted);max-width:52ch}
+.lede strong{color:var(--fg);font-weight:700}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
+.hero-cta .note{font-size:13.5px;color:var(--muted);display:inline-flex;gap:8px;align-items:center}
+.hero-cta .note::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+.facts{grid-area:facts;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.fact{padding:18px;display:flex;flex-direction:column;gap:6px;min-width:0;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow);transition:transform .3s var(--ease)}
+.fact:hover{transform:translateY(-3px)}
+.fact b{white-space:nowrap;font-size:clamp(19px,1.75vw,24px);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--fg)}
+.fact:first-child b{color:var(--accent-ink)}
+.fact span{font-size:13px;color:var(--muted);line-height:1.4}
+@media (min-width:600px){.facts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* hero entrance */
+.in-1,.in-2,.in-3,.in-4,.in-5{animation:rise .9s var(--ease) both}
+.in-2{animation-delay:.08s}.in-3{animation-delay:.16s}.in-4{animation-delay:.26s}.in-5{animation-delay:.36s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* ---------- Form card ---------- */
+.form-card{grid-area:form;position:relative;background:#fff;color:var(--fg);border-radius:var(--r-lg);padding:28px 22px 24px;border:1px solid var(--line);box-shadow:var(--shadow-lg);min-width:0}
+@media (min-width:480px){.form-card{padding:34px 32px 28px}}
+@media (min-width:980px){.form-card{position:sticky;top:96px}}
+.form-card::before{content:"";position:absolute;left:28px;right:28px;top:-1px;height:3px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.fc-head{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+.fc-top{display:flex;align-items:center;gap:12px}.fc-mark{width:40px;height:40px;border-radius:10px;box-shadow:0 6px 16px -6px rgba(8,225,134,.7)}
+.final-mark{width:64px;height:64px;border-radius:16px;box-shadow:0 0 0 8px rgba(8,225,134,.12),0 20px 40px -10px rgba(8,225,134,.5);animation:floaty 5s ease-in-out infinite}
+@keyframes floaty{50%{transform:translateY(-6px)}}
+.fc-head .tag{align-self:flex-start;font:700 11.5px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--emerald);background:var(--accent-soft);padding:6px 10px;border-radius:999px}
+.fc-head h2{font-size:clamp(24px,2.6vw,28px);font-weight:800}
+.fc-head p{font-size:14px;color:var(--muted)}
+
+form{display:flex;flex-direction:column;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label,.lbl{font-size:13px;font-weight:700;color:var(--fg)}
+.req{color:var(--accent-ink)}
+.control{position:relative;display:flex;align-items:stretch;background:var(--field);border:1.5px solid var(--field-line);border-radius:var(--r-sm);transition:border-color .2s,box-shadow .2s,background .3s}
+.control:hover{border-color:#BFD2CC}
+.control:focus-within{background:#fff;border-color:var(--accent-ink);box-shadow:0 0 0 4px rgba(8,225,134,.2)}
+.control input,.control select{font:500 15px/1.2 var(--font);color:var(--fg);background:transparent;border:0;outline:0;padding:13px 14px;width:100%;min-width:0}
+.control input::placeholder{color:#93A6A1;font-weight:400}
+.control .ic{display:grid;place-items:center;padding-left:14px;color:#7F9590}
+.control .ic + input{padding-left:10px}
+.dial{position:relative;flex:0 0 92px;width:92px;border-right:1.5px solid var(--field-line)}
+.dial select{appearance:none;-webkit-appearance:none;padding:13px 26px 13px 14px;width:100%;cursor:pointer;font-variant-numeric:tabular-nums}
+.dial::after{content:"";position:absolute;right:12px;top:50%;width:7px;height:7px;border-right:1.5px solid #6B8482;border-bottom:1.5px solid #6B8482;transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.field.invalid .control{border-color:var(--error);box-shadow:0 0 0 4px rgba(217,58,63,.12)}
+.field.valid .control{border-color:#8FD9B6}
+.err{font-size:12.5px;color:#B8282E;font-weight:600}
+.hint{font-size:12.5px;color:var(--muted)}
+
+/* same-as toggle */
+.same{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:var(--r-sm);background:var(--wash);border:1px dashed var(--line-strong);cursor:pointer;user-select:none;transition:background .2s,border-color .2s}
+.same:hover{background:var(--wash-2);border-color:#A9DCC6}
+.same input{position:absolute;opacity:0;width:1px;height:1px}
+.box{flex:0 0 auto;width:22px;height:22px;border-radius:7px;border:1.5px solid #9DB3AE;background:#fff;display:grid;place-items:center;transition:background .2s,border-color .2s,transform .2s var(--ease)}
+.box svg{width:13px;height:13px;stroke:var(--deep);stroke-width:3;fill:none;stroke-dasharray:20;stroke-dashoffset:20;transition:stroke-dashoffset .3s var(--ease)}
+.same input:checked + .box{background:var(--accent);border-color:var(--accent);transform:scale(1.05)}
+.same input:checked + .box svg{stroke-dashoffset:0}
+.same input:focus-visible + .box{outline:2px solid var(--accent-ink);outline-offset:2px}
+.same-txt{font-size:14px;font-weight:700;line-height:1.3}
+.same-txt small{display:block;font-weight:500;font-size:12.5px;color:var(--muted)}
+.wa-icon{margin-left:auto;color:#1FA855;flex:0 0 auto}
+
+.field.synced .control{background:#EFFAF4;border-color:#A9DCC6}
+.field.synced .control input,.field.synced .control select{color:#2D5A50;cursor:not-allowed}
+.sync-pill{display:none;align-items:center;gap:5px;margin-left:8px;font:700 11px/1 var(--font);color:var(--emerald);background:var(--accent-soft);padding:4px 8px;border-radius:999px;vertical-align:1px}
+.field.synced .sync-pill{display:inline-flex;animation:pop .35s var(--ease)}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:none;opacity:1}}
+.field.flash .control{animation:flash .7s ease}
+@keyframes flash{0%{box-shadow:0 0 0 0 rgba(8,225,134,.55)}100%{box-shadow:0 0 0 10px rgba(8,225,134,0)}}
+
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.submit{margin-top:6px;width:100%;padding:17px 20px;font-size:16px;background:var(--accent);color:var(--deep);box-shadow:inset 0 -3px 0 rgba(3,98,76,.2)}
+.submit:hover{transform:translateY(-1px);box-shadow:0 14px 30px -12px rgba(8,225,134,.85),inset 0 -3px 0 rgba(3,98,76,.2)}
+.submit[disabled]{cursor:progress;opacity:.9;transform:none}
+.spin{width:18px;height:18px;border:2px solid rgba(2,26,26,.25);border-top-color:var(--deep);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.consent{font-size:12px;color:var(--muted);line-height:1.5;text-align:center}
+.form-alert{font-size:13.5px;line-height:1.5;padding:12px 14px;border-radius:var(--r-sm);background:#FDECEC;color:#8E1F24;border:1px solid #F6C9CB}
+.trust{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;padding-top:16px;margin-top:4px;border-top:1px solid var(--line);font-size:12.5px;font-weight:600;color:var(--muted)}
+.trust span{display:inline-flex;gap:6px;align-items:center}
+.trust svg{color:var(--accent-ink)}
+
+/* success */
+.success{display:flex;flex-direction:column;align-items:flex-start;gap:14px;animation:rise .6s var(--ease) both}
+.success:focus{outline:none}
+.tick{width:56px;height:56px;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:0 0 0 8px var(--accent-soft)}
+.tick svg{width:26px;height:26px;stroke:var(--deep);stroke-width:3;fill:none;stroke-dasharray:40;stroke-dashoffset:40;animation:drawTick .6s .2s var(--ease) forwards}
+@keyframes drawTick{to{stroke-dashoffset:0}}
+.success h3{font-size:26px;font-weight:800}
+.success p{color:var(--muted);font-size:15px}
+.success .summary{width:100%;display:grid;gap:8px;padding:14px 16px;border-radius:var(--r-sm);background:var(--wash);border:1px solid var(--line);font-size:14px;margin:0}
+.success .summary div{display:flex;justify-content:space-between;gap:12px}
+.success .summary dt{color:var(--muted)}
+.success .summary dd{margin:0;font-weight:700;text-align:right;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.demo-note{font-size:12px;color:#7A5A00;background:#FFF5D6;padding:8px 12px;border-radius:8px}
+.linkbtn{background:none;border:0;padding:0;font:700 14px var(--font);color:var(--accent-ink);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- Ticker ---------- */
+.ticker{border-block:1px solid var(--line);overflow:hidden;background:var(--wash)}
+.ticker-track{display:flex;width:max-content;animation:marquee 46s linear infinite}
+.ticker-item{display:flex;align-items:center;gap:14px;padding:16px 28px;font:500 13px/1 var(--mono);letter-spacing:.04em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
+.ticker-item i{width:6px;height:6px;background:var(--accent);border-radius:1px;transform:rotate(45deg)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---------- Sections ---------- */
+section.block{padding-block:96px}
+section.block.tint{background:var(--wash)}
+@media (max-width:640px){section.block{padding-block:64px}}
+.sec-head{display:flex;flex-direction:column;gap:16px;margin-bottom:44px;max-width:660px}
+.sec-head.center{align-items:center;text-align:center;margin-inline:auto}
+.sec-head.center .eyebrow{align-self:center}
+.sec-head h2{font-size:clamp(30px,4.2vw,48px);font-weight:800}
+.sec-head p{color:var(--muted);font-size:17px}
+
+/* bento */
+.bento{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:760px){.bento{grid-template-columns:repeat(6,minmax(0,1fr))}.b-1{grid-column:span 4}.b-2{grid-column:span 2}.b-3{grid-column:span 2}.b-4{grid-column:span 4}}
+.b{position:relative;border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;padding:28px;display:flex;flex-direction:column;gap:14px;overflow:hidden;min-width:0;box-shadow:var(--shadow);transition:border-color .3s,transform .4s var(--ease),box-shadow .4s}
+.b:hover{border-color:#B9E6D0;transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.b .k{align-self:flex-start;font:700 11.5px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--emerald);background:var(--accent-soft);padding:6px 10px;border-radius:999px}
+.b .big{font-size:clamp(42px,5vw,64px);font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--fg);font-variant-numeric:tabular-nums}
+.b .big small{font-size:.36em;letter-spacing:-.01em;color:var(--accent-ink);margin-left:6px;font-weight:800}
+.b h3{font-size:20px;font-weight:800}
+.b p{color:var(--muted);font-size:15px;max-width:46ch}
+.b-1{background:radial-gradient(90% 120% at 100% 100%,#DDF8EA,transparent 60%),#fff}
+.sched{display:flex;gap:4px;margin-top:auto;padding-top:8px}
+.sched span{flex:1;height:30px;border-radius:6px;background:var(--wash-2)}
+.sched span.on{background:linear-gradient(180deg,var(--accent),#05B86C)}
+.sched-lbl{display:flex;justify-content:space-between;font:500 11px/1 var(--mono);color:var(--muted)}
+.dots{display:flex;margin-top:auto}
+.dots span{width:36px;height:36px;border-radius:50%;border:3px solid #fff;margin-left:-10px;display:grid;place-items:center;font:800 12px var(--font);color:var(--deep);box-shadow:0 2px 6px rgba(11,31,28,.08)}
+.dots span:first-child{margin-left:0}
+.candles{position:absolute;right:28px;bottom:26px;display:flex;align-items:flex-end;gap:8px}
+.candles i{display:block;width:10px;border-radius:3px;position:relative;background:var(--accent);transform-origin:bottom;animation:grow 1s var(--ease) both}
+.candles i.d{background:#9FD9C0}
+.candles i::before{content:"";position:absolute;left:4.5px;width:1px;top:-8px;bottom:-6px;background:inherit}
+@keyframes grow{from{transform:scaleY(.2)}}
+@media (max-width:520px){.candles{display:none}}
+
+/* curriculum */
+.stages{display:grid;gap:12px}
+.stage{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);align-items:start;transition:border-color .3s,box-shadow .3s,transform .3s var(--ease)}
+.stage:hover{border-color:#B9E6D0;box-shadow:var(--shadow);transform:translateX(4px)}
+@media (min-width:860px){.stage{grid-template-columns:72px minmax(0,1.05fr) minmax(0,1fr);gap:32px;padding:28px 32px}}
+.stage .n{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);font:800 16px var(--font);border:1px solid #C6EEDB}
+.stage h3{font-size:clamp(20px,2.2vw,24px);font-weight:800}
+.stage h3 small{display:block;font-size:14px;font-weight:600;color:var(--accent-ink);letter-spacing:0;margin-top:6px}
+.stage .desc{color:var(--muted);font-size:15px}
+@media (max-width:859px){.stage .desc{grid-column:2}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips span{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;background:var(--wash);border:1px solid var(--line);color:var(--fg)}
+
+/* next steps */
+.steps{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:860px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:28px;display:flex;flex-direction:column;gap:12px;position:relative;min-width:0;box-shadow:var(--shadow)}
+.step .num{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--deep);color:var(--accent);font:800 15px var(--font)}
+.step h3{font-size:19px;font-weight:800}
+.step p{color:var(--muted);font-size:15px}
+@media (min-width:860px){.step:not(:last-child)::after{content:"";position:absolute;top:50px;right:-17px;width:18px;height:2px;background:var(--accent)}}
+
+/* faq */
+.faq-grid{display:grid;gap:40px}
+@media (min-width:900px){.faq-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px}}
+.faq{display:grid;gap:10px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:0 22px;transition:border-color .3s,box-shadow .3s}
+.faq details[open]{border-color:#B9E6D0;box-shadow:var(--shadow)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:20px 0;font-size:16.5px;font-weight:700}
+.faq summary::-webkit-details-marker{display:none}
+.pm{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--wash);border:1px solid var(--line);position:relative;transition:background .3s}
+.pm::before,.pm::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:2px;border-radius:2px;background:var(--fg);transform:translate(-50%,-50%)}
+.pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s var(--ease)}
+details[open] .pm{background:var(--accent);border-color:var(--accent)}
+details[open] .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.faq .ans{color:var(--muted);font-size:15.5px;padding:0 44px 20px 0;max-width:62ch;animation:rise .4s var(--ease)}
+
+/* final cta: the one dark band */
+.final{position:relative;border-radius:32px;overflow:hidden;padding:64px 28px;text-align:center;background:radial-gradient(70% 120% at 50% 0%,rgba(8,225,134,.35),transparent 60%),var(--deep);color:#F1F7F7;display:flex;flex-direction:column;align-items:center;gap:18px;isolation:isolate}
+.final::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(190,235,234,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(190,235,234,.08) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at center,#000,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at center,#000,transparent 70%)}
+.final .eyebrow{align-self:center;background:rgba(8,225,134,.12);border-color:rgba(8,225,134,.35);color:var(--accent)}
+.final h2{font-size:clamp(30px,4.6vw,54px);font-weight:800;max-width:18ch}
+.final p{color:#B9D4CE;max-width:48ch}
+.final .btn-primary{margin-top:6px}
+
+/* footer */
+footer{margin-top:96px;padding-block:56px 40px;background:var(--wash);border-top:1px solid var(--line)}
+.foot{display:grid;gap:32px;grid-template-columns:1fr}
+@media (min-width:760px){.foot{grid-template-columns:1.3fr 1fr 1fr 1fr}}
+.foot h4{margin:0 0 12px;font:700 12px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.foot p,.foot li{font-size:14.5px;color:var(--fg)}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.foot a{text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+.foot a:hover{color:var(--accent-ink);border-color:currentColor}
+.foot .tagline{color:var(--muted);max-width:32ch;margin-top:14px}
+.legal{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px;font-size:12.5px;color:var(--muted)}
+.legal p{max-width:100ch}
+
+/* mobile sticky CTA */
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.96) 30%);transform:translateY(110%);transition:transform .4s var(--ease)}
+.mcta.show{transform:none}
+.mcta .btn{width:100%}
+@media (min-width:980px){.mcta{display:none}}
+
+/* scroll reveal (only content below the first screen) */
+.rv{transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.wait{opacity:.25;transform:translateY(22px)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero-line path{stroke-dashoffset:0}.hero-line .area{opacity:1}
+  .rv.wait{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+  .box svg{stroke-dashoffset:0}
+}
 </style>
-<style>html{scroll-behavior:smooth}</style>
-<!-- Paste your Meta Pixel base code here -->
 </head>
 <body>
-<div style="font-family: Manrope, Helvetica, sans-serif; color: #F1F7F7; background: #0B0F0F; min-height: 100vh">
-  <div style="max-width: 600px; margin: 0 auto; padding: 20px 22px 120px; box-sizing: border-box; display: flex; flex-direction: column; gap: 56px">
 
-    <!-- Header -->
-    <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
-      <div style="font-weight: 800; font-size: 18px; letter-spacing: -0.3px">edge<span style="color: #08E186">.</span></div>
-      <a href="https://wa.me/971549905943?text=Need%20to%20know%20about%20course%21" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; background: #F1F7F7; color: #0B0F0F; text-decoration: none; font-weight: 800; font-size: 14px">Join now</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Edge Trading Academy home"><img src="assets/edge-logo.png" alt="Edge Trading Academy" width="140" height="34"></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#why">Why Edge</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#next">How it works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary" href="#enquire" data-focus-form>Get in touch <span class="arr" aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <svg class="hero-line" viewBox="0 0 1200 300" preserveAspectRatio="none">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#08E186" stop-opacity=".22"/><stop offset="1" stop-color="#08E186" stop-opacity="0"/></linearGradient></defs>
+        <path class="area" d="M0 250 L60 232 L110 240 L170 205 L220 214 L280 176 L330 190 L390 150 L440 168 L500 132 L560 146 L610 110 L660 126 L720 92 L770 108 L830 74 L880 90 L940 58 L1000 72 L1060 40 L1120 52 L1200 24 L1200 300 L0 300Z"/>
+        <path d="M0 250 L60 232 L110 240 L170 205 L220 214 L280 176 L330 190 L390 150 L440 168 L500 132 L560 146 L610 110 L660 126 L720 92 L770 108 L830 74 L880 90 L940 58 L1000 72 L1060 40 L1120 52 L1200 24"/>
+      </svg>
     </div>
 
-    <!-- Hero -->
-    <div style="display: flex; flex-direction: column; gap: 18px">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 1px; color: #08E186">FOREX COURSE · DUBAI</div>
-      <h1 style="margin: 0; font-size: 40px; line-height: 1.08; font-weight: 800; letter-spacing: -1.2px">Edge Trading Academy</h1>
-      <p style="margin: 0; font-size: 20px; line-height: 1.45; color: #BEEBEA; font-weight: 500">Forex education, minus the hype.</p>
-      <p style="margin: 0; font-size: 16px; line-height: 1.65; color: #9FB3B3">Mentor-led classes on risk management and trading psychology. You practise with a real $100 funded account from day one — and every class is recorded, so it fits around your job.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 6px">
-        <a href="https://wa.me/971549905943?text=Need%20to%20know%20about%20course%21" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px; border-radius: 12px; background: #08E186; color: #0B0F0F; text-decoration: none; font-weight: 800; font-size: 15px">
-          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
-          Chat on WhatsApp
-        </a>
-        <a href="#course" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border-radius: 12px; border: 1px solid #22302F; color: #F1F7F7; text-decoration: none; font-weight: 600; font-size: 15px">What you'll learn</a>
-      </div>
-    </div>
-
-    <!-- Course -->
-    <div id="course" style="display: flex; flex-direction: column; gap: 16px">
-      <h2 style="margin: 0; font-size: 13px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; letter-spacing: 1px; color: #6E8585">THE COURSE</h2>
-      <div style="display: flex; flex-direction: column; gap: 10px">
-        <div style="background: #121A1A; border: 1px solid #1C2828; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px">
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #08E186">STAGE 01</div>
-          <div style="font-size: 17px; font-weight: 800">Foundation first</div>
-          <div style="font-size: 15px; line-height: 1.55; color: #9FB3B3">Forex essentials, risk management and trading psychology.</div>
-        </div>
-        <div style="background: #121A1A; border: 1px solid #1C2828; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px">
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #08E186">STAGE 02</div>
-          <div style="font-size: 17px; font-weight: 800">Develop your edge</div>
-          <div style="font-size: 15px; line-height: 1.55; color: #9FB3B3">Technical analysis, strategy building and daily live practice.</div>
-        </div>
-        <div style="background: #121A1A; border: 1px solid #1C2828; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px">
-          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #08E186">STAGE 03</div>
-          <div style="font-size: 17px; font-weight: 800">Master your craft</div>
-          <div style="font-size: 15px; line-height: 1.55; color: #9FB3B3">Advanced concepts and ongoing mentor call-outs.</div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow in-1"><span class="dot"></span>New batches open · Deira, Dubai</span>
+        <h1 class="in-2">Learn Forex.<em>Build a skill.</em></h1>
+        <p class="lede in-3">A complete <strong>basic-to-advanced Forex course for AED 700</strong>, taught live by mentors at UAE’s trusted Forex trading institute. Pick a batch that fits your day, from morning to night, and keep your mentor for life.</p>
+        <div class="hero-cta in-4">
+          <a class="btn btn-ghost" href="#curriculum">See the 5-stage curriculum</a>
+          <span class="note">Beginners welcome. No trading experience needed.</span>
         </div>
       </div>
-    </div>
 
-    <!-- Fee -->
-    <div style="display: flex; flex-direction: column; gap: 16px">
-      <h2 style="margin: 0; font-size: 13px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; letter-spacing: 1px; color: #6E8585">FEE</h2>
-      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap">
-        <div style="font-size: 34px; font-weight: 800; letter-spacing: -1px">AED 700</div>
-        <div style="font-size: 15px; color: #08E186; font-weight: 600">incl. $100 funded account</div>
-      </div>
-      <div style="display: flex; flex-direction: column; font-size: 15px; color: #BEEBEA">
-        <div style="padding: 12px 0; border-top: 1px solid #1C2828">Live instructor-led classes</div>
-        <div style="padding: 12px 0; border-top: 1px solid #1C2828">Recordings of every session</div>
-        <div style="padding: 12px 0; border-top: 1px solid #1C2828">Daily practice &amp; mentor support</div>
-        <div style="padding: 12px 0; border-top: 1px solid #1C2828; border-bottom: 1px solid #1C2828">Community support channels</div>
-      </div>
-    </div>
+      <!-- ===== Enquiry form ===== -->
+      <aside class="form-card in-3" id="enquire" aria-labelledby="fc-title">
+        <div id="formView">
+          <div class="fc-head">
+            <div class="fc-top"><img class="fc-mark" src="assets/icon-192.png" alt="" width="40" height="40"><span class="tag">Course enquiry</span></div>
+            <h2 id="fc-title">Get in touch with our team</h2>
+            <p>Share your details. A course advisor will reach you on WhatsApp to explain batches, timings and fees.</p>
+          </div>
 
-    <!-- Members -->
-    <div style="display: flex; flex-direction: column; gap: 16px">
-      <h2 style="margin: 0; font-size: 13px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; letter-spacing: 1px; color: #6E8585">MEMBERS SAY</h2>
-      <div style="display: flex; flex-direction: column; gap: 18px">
-        <div style="display: flex; flex-direction: column; gap: 6px">
-          <p style="margin: 0; font-size: 16px; line-height: 1.55">“The mentors keep it real. No fake promises, no hype. Just clear teaching and real experience.”</p>
-          <div style="font-size: 13px; color: #6E8585">Akhil Raj</div>
+          <form id="leadForm" novalidate>
+            <div class="field" data-field="name">
+              <label for="name">Full name <span class="req" aria-hidden="true">*</span></label>
+              <div class="control">
+                <span class="ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="e.g. Ahmed Khan" required aria-describedby="name-err" maxlength="80">
+              </div>
+              <div class="err" id="name-err" aria-live="polite"></div>
+            </div>
+
+            <div class="field" data-field="phone">
+              <label for="phone">Phone number <span class="req" aria-hidden="true">*</span></label>
+              <div class="control">
+                <div class="dial"><select id="phoneCode" name="phoneCode" aria-label="Phone country code"></select></div>
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="50 123 4567" required aria-describedby="phone-err" maxlength="18">
+              </div>
+              <div class="err" id="phone-err" aria-live="polite"></div>
+            </div>
+
+            <label class="same" for="sameAs">
+              <input type="checkbox" id="sameAs" name="sameAs">
+              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              <span class="same-txt">My WhatsApp is on this number<small>We’ll fill it in for you</small></span>
+              <svg class="wa-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2 .7 2.8.6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2z"/></svg>
+            </label>
+
+            <div class="field" data-field="whatsapp" id="waField">
+              <label for="whatsapp">WhatsApp number <span class="req" aria-hidden="true">*</span><span class="sync-pill"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Same as phone</span></label>
+              <div class="control">
+                <div class="dial"><select id="waCode" name="waCode" aria-label="WhatsApp country code"></select></div>
+                <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="off" placeholder="50 123 4567" required aria-describedby="whatsapp-err" maxlength="18">
+              </div>
+              <div class="err" id="whatsapp-err" aria-live="polite"></div>
+            </div>
+
+            <div class="field" data-field="job">
+              <label for="job">Job title <span class="req" aria-hidden="true">*</span></label>
+              <div class="control">
+                <span class="ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>
+                <input id="job" name="job" type="text" list="jobs" autocomplete="organization-title" placeholder="e.g. Sales Executive, Student" required aria-describedby="job-err" maxlength="80">
+                <datalist id="jobs">
+                  <option value="Student"><option value="Employee (private sector)"><option value="Government employee"><option value="Business owner"><option value="Self-employed / Freelancer"><option value="Sales Executive"><option value="Accountant"><option value="Engineer"><option value="IT Professional"><option value="Manager"><option value="Homemaker"><option value="Looking for a job">
+                </datalist>
+              </div>
+              <div class="err" id="job-err" aria-live="polite"></div>
+            </div>
+
+            <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
+
+            <div class="form-alert" id="formAlert" role="alert" hidden></div>
+
+            <button class="btn submit" type="submit" id="submitBtn">
+              <span class="btn-label">Send details</span><span class="arr" aria-hidden="true">→</span>
+            </button>
+            <p class="consent">By submitting, you agree that Edge Trading Academy may contact you by phone and WhatsApp about our courses.</p>
+          </form>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 6px">
-          <p style="margin: 0; font-size: 16px; line-height: 1.55">“The daily sessions and community make learning easy. I never felt alone in the process.”</p>
-          <div style="font-size: 13px; color: #6E8585">Manu Varghese</div>
-        </div>
+
+        <div id="successView" hidden></div>
+      </aside>
+
+      <div class="facts in-5" aria-label="Course at a glance">
+        <div class="fact"><b>AED 700</b><span>Complete basic-to-advanced course</span></div>
+        <div class="fact"><b>$100</b><span>Trading capital to experience the real market</span></div>
+        <div class="fact"><b>1,000+</b><span>Members in our trading community</span></div>
+        <div class="fact"><b>Lifetime</b><span>Mentorship after you finish</span></div>
       </div>
     </div>
+  </section>
 
-    <!-- FAQ -->
-    <div style="display: flex; flex-direction: column; gap: 16px">
-      <h2 style="margin: 0; font-size: 13px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; letter-spacing: 1px; color: #6E8585">QUESTIONS</h2>
-      <div style="display: flex; flex-direction: column; gap: 18px">
-        <div style="display: flex; flex-direction: column; gap: 4px">
-          <div style="font-size: 16px; font-weight: 800">I work full-time. Can I keep up?</div>
-          <div style="font-size: 15px; line-height: 1.55; color: #9FB3B3">Yes — every live class is recorded.</div>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 4px">
-          <div style="font-size: 16px; font-weight: 800">Is Forex legal in the UAE?</div>
-          <div style="font-size: 15px; line-height: 1.55; color: #9FB3B3">Yes, for residents using a regulated broker. Edge is education only, not a broker.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 1.55; color: #6E8585; padding-top: 8px; border-top: 1px solid #1C2828">
-      <div style="padding-top: 16px">© 2026 Edge Trading Academy · <a href="https://edgeacademy.ae" target="_blank" rel="noopener">edgeacademy.ae</a></div>
-      <div>Education only, not financial advice. Forex trading carries a high level of risk.</div>
-    </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker"></div>
   </div>
 
-  <!-- Sticky WhatsApp bar -->
-  <div style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: #0B0F0F; border-top: 1px solid #1C2828; padding: 12px 22px">
-    <a href="https://wa.me/971549905943?text=Need%20to%20know%20about%20course%21" target="_blank" rel="noopener" style="max-width: 556px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; border-radius: 12px; background: #08E186; color: #0B0F0F; text-decoration: none; font-weight: 800; font-size: 16px">
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
-      Chat with us on WhatsApp
-    </a>
+  <!-- ================= WHY ================= -->
+  <section class="block" id="why">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow"><span class="dot"></span>The Edge advantage</span>
+        <h2>Forex taught as a practical skill, not a get-rich promise.</h2>
+        <p>We help people learn trading as a skill they can use to build an additional income opportunity, with live sessions, real mentors and a community that stays with you after the course.</p>
+      </div>
+
+      <div class="bento">
+        <article class="b b-1 rv">
+          <span class="k">Affordable learning</span>
+          <div class="big">700<small>AED</small></div>
+          <h3>The complete course, basic to advanced</h3>
+          <p>One fee covers all five stages of the curriculum, from your first currency pair to risk and trade management.</p>
+          <div class="candles" aria-hidden="true">
+            <i style="height:26px"></i><i class="d" style="height:18px;animation-delay:.1s"></i><i style="height:34px;animation-delay:.2s"></i><i style="height:30px;animation-delay:.3s" class="d"></i><i style="height:46px;animation-delay:.4s"></i><i style="height:58px;animation-delay:.5s"></i><i class="d" style="height:40px;animation-delay:.6s"></i><i style="height:70px;animation-delay:.7s"></i>
+          </div>
+        </article>
+
+        <article class="b b-2 rv">
+          <span class="k">Flexible hours</span>
+          <h3>Morning to night batches</h3>
+          <p>Choose a batch that fits around your job or studies.</p>
+          <div>
+            <div class="sched" aria-hidden="true"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span class="on"></span></div>
+            <div class="sched-lbl" aria-hidden="true" style="margin-top:8px"><span>AM</span><span>NOON</span><span>PM</span></div>
+          </div>
+        </article>
+
+        <article class="b b-3 rv">
+          <span class="k">Capital support</span>
+          <div class="big">$100</div>
+          <p>Get $100 trading capital to experience the real market once you have learned the basics.</p>
+        </article>
+
+        <article class="b b-4 rv">
+          <span class="k">Lifetime mentorship &amp; community</span>
+          <div class="big">1,000+<small>traders</small></div>
+          <p>Keep learning with continued mentor support and a growing community of 1,000+ who share setups, questions and progress.</p>
+          <div class="dots" aria-hidden="true">
+            <span style="background:#08E186">A</span><span style="background:#BEEBEA">R</span><span style="background:#E9E3D5">S</span><span style="background:#7FD3B0">M</span><span style="background:#0C3B40;color:#F1F7F7">+</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CURRICULUM ================= -->
+  <section class="block tint" id="curriculum">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"><span class="dot"></span>The curriculum</span>
+        <h2>Five stages. One learning journey.</h2>
+        <p>Each stage builds on the last, so you always know what you are learning and why it comes next.</p>
+      </div>
+
+      <div class="stages">
+        <div class="stage rv">
+          <div class="n">01</div>
+          <h3>Forex Foundation<small>Start from zero</small></h3>
+          <div class="desc">How the currency market works, who moves it and when. Pairs, pips, lots, leverage and trading sessions, plus setting up your trading platform.
+            <div class="chips"><span>Currency pairs</span><span>Pips &amp; lots</span><span>Sessions</span></div></div>
+        </div>
+        <div class="stage rv">
+          <div class="n">02</div>
+          <h3>Market Reading<small>Support, Resistance &amp; Fibonacci</small></h3>
+          <div class="desc">Find the price levels the market respects, and use Fibonacci retracements to plan where a move may pause or turn.
+            <div class="chips"><span>Support</span><span>Resistance</span><span>Fibonacci</span></div></div>
+        </div>
+        <div class="stage rv">
+          <div class="n">03</div>
+          <h3>Chart Analysis<small>Learning chart analysis properly</small></h3>
+          <div class="desc">Read candlesticks, trends and market structure across timeframes so your entries are based on what the chart shows.
+            <div class="chips"><span>Candlesticks</span><span>Trends</span><span>Timeframes</span></div></div>
+        </div>
+        <div class="stage rv">
+          <div class="n">04</div>
+          <h3>Advanced Concepts<small>Supply &amp; Demand</small></h3>
+          <div class="desc">Spot supply and demand zones where larger orders sit, and combine them with your levels for higher-quality setups.
+            <div class="chips"><span>Supply zones</span><span>Demand zones</span><span>Confluence</span></div></div>
+        </div>
+        <div class="stage rv">
+          <div class="n">05</div>
+          <h3>Risk &amp; Trade Management<small>Protect your capital</small></h3>
+          <div class="desc">Position sizing, stop-loss and take-profit placement, and risk per trade, so one bad trade never decides your account.
+            <div class="chips"><span>Position size</span><span>Stop-loss</span><span>Risk : Reward</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEXT STEPS ================= -->
+  <section class="block" id="next">
+    <div class="wrap">
+      <div class="sec-head center rv">
+        <span class="eyebrow"><span class="dot"></span>After you enquire</span>
+        <h2>What happens next</h2>
+      </div>
+      <div class="steps">
+        <div class="step rv"><span class="num">01</span><h3>Send your details</h3><p>Fill in the short form with your name, phone, WhatsApp and job title. No payment is taken.</p></div>
+        <div class="step rv"><span class="num">02</span><h3>Talk to an advisor</h3><p>Our team contacts you on WhatsApp to answer your questions and explain fees, batches and the $100 capital support.</p></div>
+        <div class="step rv"><span class="num">03</span><h3>Pick your batch and start</h3><p>Choose a morning, afternoon or evening batch and begin Stage 01 at our Deira centre.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="block" id="faq" style="padding-top:0">
+    <div class="wrap faq-grid">
+      <div class="sec-head rv" style="margin-bottom:0">
+        <span class="eyebrow"><span class="dot"></span>Questions</span>
+        <h2>Before you enquire</h2>
+        <p>Still unsure? Leave your details and ask our advisor directly on WhatsApp.</p>
+        <div><a class="btn btn-primary" href="#enquire" data-focus-form>Get in touch <span class="arr" aria-hidden="true">→</span></a></div>
+      </div>
+      <div class="faq rv">
+        <details open><summary>Do I need any trading experience?<span class="pm" aria-hidden="true"></span></summary><div class="ans">No. The course starts at the Forex foundation and is designed to be simple and accessible, even for complete beginners.</div></details>
+        <details><summary>What does the AED 700 cover?<span class="pm" aria-hidden="true"></span></summary><div class="ans">The full basic-to-advanced curriculum across all five stages, live trading sessions, lifetime mentorship and access to our trading community.</div></details>
+        <details><summary>How does the $100 capital support work?<span class="pm" aria-hidden="true"></span></summary><div class="ans">After you learn, you get $100 of trading capital to experience the real market. Your advisor will explain the eligibility and terms when they contact you.</div></details>
+        <details><summary>What are the class timings?<span class="pm" aria-hidden="true"></span></summary><div class="ans">We run flexible batches from morning to night, so you can learn around your work or studies. Tell your advisor which time suits you.</div></details>
+        <details><summary>Where are the classes held?<span class="pm" aria-hidden="true"></span></summary><div class="ans">At our centre in #104 &amp; 111, Regus, City Centre Deira, Dubai.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="final rv">
+      <img class="final-mark" src="assets/icon-192.png" alt="" width="64" height="64">
+      <span class="eyebrow"><span class="dot"></span>Seats fill batch by batch</span>
+      <h2>Your trading skill starts with one conversation.</h2>
+      <p>Leave your details and our team will message you on WhatsApp with batch timings and next steps.</p>
+      <a class="btn btn-primary" href="#enquire" data-focus-form>Send details <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img src="assets/edge-logo.png" alt="Edge Trading Academy" height="34" width="140" style="height:34px;width:auto">
+        <p class="tagline">Learn Forex. Build a skill. Create more possibilities.</p>
+      </div>
+      <div><h4>Visit us</h4><p>#104 &amp; 111, Regus,<br>City Centre Deira,<br>Dubai, UAE</p></div>
+      <div><h4>Call / WhatsApp</h4><ul><li><a href="https://wa.me/971545828335" target="_blank" rel="noopener">+971 54 582 8335</a></li><li><a href="https://wa.me/971545822908" target="_blank" rel="noopener">+971 54 582 2908</a></li></ul></div>
+      <div><h4>Online</h4><ul><li>info@edgeacademy.ae</li><li><a href="https://www.edgeacademy.ae" target="_blank" rel="noopener">www.edgeacademy.ae</a></li><li><a href="https://www.instagram.com/edgeacademy.ae/" target="_blank" rel="noopener">@edgeacademy.ae</a></li></ul></div>
+    </div>
+    <div class="legal">
+      <p><strong style="color:var(--fg)">Risk notice:</strong> Trading foreign exchange carries a high level of risk and may not be suitable for everyone. You can lose some or all of your capital. Edge Trading Academy provides education only and does not give investment advice or guarantee results.</p>
+      <p>© <span id="yr">2026</span> Edge Trading Academy. All rights reserved.</p>
+    </div>
   </div>
-</div>
+</footer>
+
+<div class="mcta" id="mcta"><a class="btn btn-primary" href="#enquire" data-focus-form>Send details <span class="arr" aria-hidden="true">→</span></a></div>
+
+<script>
+/* ============ CONFIG ============
+   Paste your Google Apps Script Web App URL here (ends with /exec).
+   While it still says PASTE_..., the form runs in preview mode and saves nothing. */
+const SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+const DEFAULT_DIAL = "971";
+
+(function(){
+  const $ = s => document.querySelector(s);
+  const DIALS = [
+    ["971","UAE"],["91","India"],["92","Pakistan"],["63","Philippines"],["20","Egypt"],["966","Saudi Arabia"],
+    ["968","Oman"],["974","Qatar"],["965","Kuwait"],["973","Bahrain"],["880","Bangladesh"],["94","Sri Lanka"],
+    ["977","Nepal"],["962","Jordan"],["961","Lebanon"],["963","Syria"],["249","Sudan"],["212","Morocco"],
+    ["234","Nigeria"],["254","Kenya"],["44","UK"],["1","USA / Canada"],["7","Russia"],["90","Türkiye"],["98","Iran"],["86","China"]
+  ];
+  const fill = sel => { sel.innerHTML = DIALS.map(([c,n]) => `<option value="${c}"${c===DEFAULT_DIAL?" selected":""}>+${c}  ${n}</option>`).join(""); };
+  const pc = $("#phoneCode"), wc = $("#waCode");
+  fill(pc); fill(wc);
+  // show only "+971" in the closed select for a compact look
+  const compact = sel => { [...sel.options].forEach(o => { o.dataset.full = o.dataset.full || o.textContent; o.textContent = o.selected ? "+"+o.value : o.dataset.full; }); };
+  [pc,wc].forEach(s => { compact(s); s.addEventListener("focus",()=>[...s.options].forEach(o=>o.textContent=o.dataset.full)); s.addEventListener("blur",()=>compact(s)); s.addEventListener("change",()=>{compact(s);}); });
+
+  /* ---------- Validation ---------- */
+  const digits = v => (v||"").replace(/\D/g,"").replace(/^0+/,"");
+  const rules = {
+    name: v => { const t=v.trim(); if(!t) return "Enter your full name."; if(t.length<2 || !/[A-Za-z؀-ۿ]/.test(t)) return "Enter a valid name."; return ""; },
+    job:  v => v.trim().length<2 ? "Enter your job title, or “Student” if you are studying." : "",
+  };
+  function phoneErr(v, code, label){
+    const d = digits(v);
+    if(!d) return `Enter your ${label}.`;
+    if(code==="971"){ if(d.length<8||d.length>9) return "UAE numbers have 9 digits, e.g. 50 123 4567."; }
+    else if(d.length<6||d.length>14) return `Enter a valid ${label}.`;
+    return "";
+  }
+  function setState(fieldName, msg){
+    const f = document.querySelector(`[data-field="${fieldName}"]`);
+    const id = fieldName==="job"?"job":fieldName;
+    f.classList.toggle("invalid", !!msg); f.classList.toggle("valid", !msg);
+    document.getElementById(id+"-err").textContent = msg;
+    document.getElementById(id).setAttribute("aria-invalid", msg?"true":"false");
+    return !msg;
+  }
+  const check = {
+    name: () => setState("name", rules.name($("#name").value)),
+    phone: () => setState("phone", phoneErr($("#phone").value, pc.value, "phone number")),
+    whatsapp: () => setState("whatsapp", phoneErr($("#whatsapp").value, wc.value, "WhatsApp number")),
+    job: () => setState("job", rules.job($("#job").value)),
+  };
+  const touched = new Set();
+  [["name","name"],["phone","phone"],["whatsapp","whatsapp"],["job","job"]].forEach(([id,key])=>{
+    const el = document.getElementById(id);
+    el.addEventListener("blur", ()=>{ if(el.value.trim()) touched.add(key); if(touched.has(key)) check[key](); });
+    el.addEventListener("input", ()=>{ if(touched.has(key)) check[key](); });
+  });
+  // keep phone inputs to phone characters
+  ["phone","whatsapp"].forEach(id=>document.getElementById(id).addEventListener("input",e=>{e.target.value=e.target.value.replace(/[^\d\s-]/g,"");}));
+  pc.addEventListener("change",()=>{ if(touched.has("phone")) check.phone(); });
+  wc.addEventListener("change",()=>{ if(touched.has("whatsapp")) check.whatsapp(); });
+
+  /* ---------- Same-as-phone sync ---------- */
+  const same = $("#sameAs"), waField = $("#waField"), wa = $("#whatsapp"), ph = $("#phone");
+  function sync(){
+    wa.value = ph.value; wc.value = pc.value; compact(wc);
+    if(touched.has("phone") || ph.value) { touched.add("whatsapp"); }
+    if(ph.value) check.whatsapp(); else { waField.classList.remove("invalid","valid"); $("#whatsapp-err").textContent=""; }
+  }
+  same.addEventListener("change", ()=>{
+    const on = same.checked;
+    waField.classList.toggle("synced", on);
+    wa.readOnly = on; wc.disabled = on;
+    if(on){ sync(); waField.classList.remove("flash"); void waField.offsetWidth; waField.classList.add("flash"); }
+    else { wa.focus(); wa.select(); }
+  });
+  ph.addEventListener("input", ()=>{ if(same.checked) sync(); });
+  pc.addEventListener("change", ()=>{ if(same.checked) sync(); });
+
+  /* ---------- Attribution (UTM) ---------- */
+  const qs = new URLSearchParams(location.search);
+  const utm = k => qs.get(k) || "";
+
+  /* ---------- Submit ---------- */
+  const form = $("#leadForm"), btn = $("#submitBtn"), alertBox = $("#formAlert");
+  const label = btn.querySelector(".btn-label"), arrow = btn.querySelector(".arr");
+  const fmt = (code, v) => "+"+code+" "+digits(v);
+
+  form.addEventListener("submit", async e=>{
+    e.preventDefault();
+    alertBox.hidden = true;
+    ["name","phone","whatsapp","job"].forEach(k=>touched.add(k));
+    const ok = [check.name(), check.phone(), check.whatsapp(), check.job()];
+    if(ok.includes(false)){
+      const firstBad = form.querySelector(".field.invalid input");
+      firstBad && firstBad.focus();
+      return;
+    }
+    const data = {
+      name: $("#name").value.trim().replace(/\s+/g," "),
+      phone: fmt(pc.value, ph.value),
+      whatsapp: fmt(wc.value, wa.value),
+      same_as_phone: same.checked ? "yes" : "no",
+      job_title: $("#job").value.trim(),
+      company: $("#company").value, // honeypot
+      page: location.href.split("#")[0],
+      referrer: document.referrer || "",
+      utm_source: utm("utm_source"), utm_medium: utm("utm_medium"), utm_campaign: utm("utm_campaign"),
+      utm_content: utm("utm_content"), utm_term: utm("utm_term")
+    };
+
+    btn.disabled = true; label.textContent = "Sending…"; arrow.style.display="none";
+    const sp = document.createElement("span"); sp.className="spin"; btn.prepend(sp);
+
+    const demo = SCRIPT_URL.indexOf("PASTE_") === 0;
+    try{
+      if(demo){ await new Promise(r=>setTimeout(r,900)); }
+      else{
+        const res = await fetch(SCRIPT_URL, { method:"POST", body:new URLSearchParams(data) });
+        let out = null; try{ out = await res.json(); }catch(_){}
+        if(!res.ok || (out && out.ok === false)) throw new Error(out && out.error || "Server error");
+      }
+      showSuccess(data, demo);
+      try{ window.dataLayer && window.dataLayer.push({event:"lead_submitted", form:"edge_course_enquiry"}); }catch(_){}
+      try{ window.fbq && window.fbq("track","Lead"); }catch(_){}
+    }catch(err){
+      alertBox.innerHTML = 'We couldn’t send your details. Check your connection and try again, or message us on WhatsApp at <strong>+971 54 582 8335</strong>.';
+      alertBox.hidden = false;
+    }finally{
+      sp.remove(); btn.disabled=false; label.textContent="Send details"; arrow.style.display="";
+    }
+  });
+
+  function esc(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+  function showSuccess(d, demo){
+    const first = d.name.split(" ")[0];
+    const v = $("#successView");
+    v.innerHTML = `
+      <div class="success" role="status" tabindex="-1">
+        <div class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h3>Thanks, ${esc(first)}. You’re on our list.</h3>
+        <p>A course advisor will message you on WhatsApp shortly with batch timings and next steps.</p>
+        <dl class="summary">
+          <div><dt>Name</dt><dd>${esc(d.name)}</dd></div>
+          <div><dt>Phone</dt><dd>${esc(d.phone)}</dd></div>
+          <div><dt>WhatsApp</dt><dd>${esc(d.whatsapp)}</dd></div>
+          <div><dt>Job title</dt><dd>${esc(d.job_title)}</dd></div>
+        </dl>
+        ${demo ? '<p class="demo-note">Preview mode: connect the Google Sheet to start saving enquiries.</p>' : ''}
+        <p style="font-size:14px">Can’t wait? Call or WhatsApp <strong style="color:var(--fg)">+971 54 582 8335</strong>.</p>
+        <button type="button" class="linkbtn" id="again">Submit another enquiry</button>
+      </div>`;
+    $("#formView").hidden = true; v.hidden = false;
+    v.querySelector(".success").focus({preventScroll:true});
+    $("#again").addEventListener("click", ()=>{
+      form.reset(); same.dispatchEvent(new Event("change")); touched.clear();
+      form.querySelectorAll(".field").forEach(f=>{f.classList.remove("valid","invalid");});
+      form.querySelectorAll(".err").forEach(e=>e.textContent="");
+      [pc,wc].forEach(s=>{s.value=DEFAULT_DIAL;compact(s);});
+      v.hidden = true; $("#formView").hidden = false; $("#name").focus();
+    });
+  }
+
+  /* ---------- CTA → focus form ---------- */
+  document.querySelectorAll("[data-focus-form]").forEach(a=>a.addEventListener("click",e=>{
+    e.preventDefault();
+    $("#enquire").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto":"smooth", block:"start"});
+    setTimeout(()=>{ const n=$("#name"); if(n && !$("#formView").hidden) n.focus({preventScroll:true}); }, 550);
+  }));
+
+  /* ---------- Ticker ---------- */
+  const words = ["EUR/USD","Support & Resistance","GBP/JPY","Fibonacci","XAU/USD","Chart analysis","USD/JPY","Supply & Demand","GBP/USD","Risk management","AUD/USD","Trade management"];
+  const row = words.map(w=>`<span class="ticker-item"><i></i>${w}</span>`).join("");
+  $("#ticker").innerHTML = row + row;
+
+  /* ---------- Nav border ---------- */
+  const nav = $("#nav");
+  const onScroll = ()=> nav.classList.toggle("scrolled", scrollY > 8);
+  addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  /* ---------- Reveal on scroll (only for content below the first screen) ---------- */
+  if("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+    const io = new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.remove("wait"); io.unobserve(en.target);} }),{rootMargin:"0px 0px -8% 0px"});
+    document.querySelectorAll(".rv").forEach((el,i)=>{
+      if(el.getBoundingClientRect().top > innerHeight){ el.classList.add("wait"); el.style.transitionDelay = (i%4)*60+"ms"; io.observe(el); }
+    });
+    /* mobile sticky CTA: show after hero, hide while the form is visible */
+    const m = $("#mcta"); let formVisible = true;
+    new IntersectionObserver(es=>{ formVisible = es[0].isIntersecting; m.classList.toggle("show", !formVisible && scrollY>400); }).observe($("#enquire"));
+    addEventListener("scroll", ()=> m.classList.toggle("show", !formVisible && scrollY>400), {passive:true});
+  }
+  $("#yr").textContent = new Date().getFullYear();
+})();
+</script>
+
 </body>
 </html>
