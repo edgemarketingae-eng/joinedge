@@ -1,5 +1,16 @@
 # Edge Academy enquiry page → Google Sheets
 
+## Live setup (already connected)
+- **Google Sheet:** "Edge Academy – Course Leads" in the class@mentor.edgeacademy.ae Drive, tab **Leads**
+  https://docs.google.com/spreadsheets/d/179OBsZMkp26KhOkWbrjyJbsBarZmD-xZgHuyJKROruI/edit
+- **Apps Script project:** "Edge Academy Lead Form" (Extensions → Apps Script from the Sheet), limited to this one spreadsheet (`@OnlyCurrentDoc`)
+- **Web App deployment:** "joinedge form v1", Execute as: class@mentor.edgeacademy.ae, Who has access: Anyone
+- **Endpoint used by `index.html` (`SCRIPT_URL`):**
+  https://script.google.com/macros/s/AKfycbxe-6mucNLO60bpkvpJRkgli0IMId9OGi5axcFbLINgUetg-5Db2V_r9vS5W8Vp_hyEwA/exec
+- Hosting: Vercel project `joinedge`, auto-deploys from `main`.
+
+The steps below are how this was set up, for rebuilding it on another account.
+
 ## Files
 - `edge-academy-enquiry.html` — the full page (logo embedded). Host it anywhere: your website, Hostinger/cPanel, Netlify, Vercel, or GitHub Pages.
 - `Code.gs` — the Google Apps Script that writes every submission into a Google Sheet.

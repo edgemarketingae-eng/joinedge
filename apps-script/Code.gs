@@ -2,6 +2,8 @@
  * Edge Trading Academy — Course enquiry → Google Sheets
  * Paste this whole file into Extensions → Apps Script of your Google Sheet.
  * Run setup() once, then Deploy → New deployment → Web app.
+ *
+ * @OnlyCurrentDoc  (limits access to this one spreadsheet)
  */
 
 const SHEET_NAME   = 'Leads';
