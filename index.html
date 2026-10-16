@@ -44,6 +44,7 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:88px}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}
@@ -295,6 +296,103 @@ footer{margin-top:96px;padding-block:56px 40px;background:var(--wash);border-top
 .legal{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px;font-size:12.5px;color:var(--muted)}
 .legal p{max-width:100ch}
 
+
+/* ---------- Program switch & experience (form) ---------- */
+.prog{border:0;margin:0;padding:0;min-width:0}
+.prog legend{padding:0;margin-bottom:8px;font-size:13px;font-weight:700;color:var(--fg)}
+.prog-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.prog label,.exp-opts label{position:relative;cursor:pointer;display:block;min-width:0}
+.prog input,.exp-opts input{position:absolute;opacity:0;width:1px;height:1px}
+.prog .opt{position:relative;display:flex;flex-direction:column;gap:3px;height:100%;padding:12px 34px 12px 14px;border-radius:var(--r-sm);border:1.5px solid var(--field-line);background:var(--field);transition:border-color .2s,background .2s,box-shadow .2s}
+.prog .opt b{font-size:14px;font-weight:800;line-height:1.25}
+.prog .opt small{font-size:12px;color:var(--muted);line-height:1.35}
+.prog .opt::after{content:"";position:absolute;top:12px;right:12px;width:16px;height:16px;border-radius:50%;border:1.5px solid #9DB3AE;background:#fff;transition:border-width .2s,border-color .2s}
+.prog label:hover .opt{border-color:#BFD2CC}
+.prog input:checked + .opt{border-color:var(--accent-ink);background:var(--accent-soft);box-shadow:0 0 0 3px rgba(8,225,134,.18)}
+.prog input:checked + .opt::after{border:5px solid var(--accent-ink)}
+.prog input:focus-visible + .opt,.exp-opts input:focus-visible + span{outline:2px solid var(--accent-ink);outline-offset:2px}
+.exp-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.exp-opts span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:46px;padding:8px 10px;border-radius:var(--r-sm);border:1.5px solid var(--field-line);background:var(--field);font-size:13.5px;font-weight:600;line-height:1.3;transition:border-color .2s,background .2s,color .2s}
+.exp-opts label:hover span{border-color:#BFD2CC}
+.exp-opts input:checked + span{border-color:var(--accent-ink);background:var(--accent-soft);color:var(--emerald)}
+.field.invalid .exp-opts span{border-color:var(--error)}
+.exp-note{font-size:12.5px;line-height:1.5;padding:10px 12px;border-radius:var(--r-sm);background:#FFF7E0;color:#5E4800;border:1px solid #F0DDA0}
+.exp-note .linkbtn{font-size:12.5px;color:#5E4800}
+.field.reveal{animation:rise .45s var(--ease)}
+.fc-head.swap{animation:fadeSwap .35s var(--ease)}
+@keyframes fadeSwap{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
+.m-link{align-self:flex-start;font-size:14.5px;font-weight:700;color:var(--emerald);text-decoration:none;border-bottom:1.5px solid rgba(3,98,76,.3);padding-bottom:2px;transition:border-color .2s}
+.m-link:hover{border-color:var(--emerald)}
+
+/* ---------- Mentorship (the dark premium band) ---------- */
+.mentor{position:relative;overflow:hidden;color:#F1F7F7;background:radial-gradient(55% 45% at 95% 0%,rgba(8,225,134,.2),transparent 70%),radial-gradient(40% 40% at 0% 100%,rgba(3,98,76,.45),transparent 70%),var(--deep);padding-block:104px}
+@media (max-width:640px){.mentor{padding-block:72px}}
+.mentor::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(190,235,234,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(190,235,234,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 50% at 70% 10%,#000,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 50% at 70% 10%,#000,transparent 75%)}
+.mentor .wrap{position:relative;display:flex;flex-direction:column;gap:64px}
+.mentor p{color:#A9C4BE}
+.eyebrow-dark{background:rgba(8,225,134,.12);border-color:rgba(8,225,134,.35);color:var(--accent)}
+.m-top{display:grid;gap:36px}
+@media (min-width:960px){.m-top{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:64px;align-items:end}}
+.m-intro{display:flex;flex-direction:column;gap:20px;min-width:0}
+.m-intro h2{font-size:clamp(36px,5.2vw,62px);font-weight:800;letter-spacing:-.045em;color:#fff}
+.m-intro h2 span{display:block;color:var(--accent);font-size:.46em;letter-spacing:-.02em;margin-top:12px;line-height:1.2}
+.m-intro p{font-size:clamp(16px,1.5vw,17.5px);max-width:58ch}
+.m-cta{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+.m-cta .note{font-size:13.5px;color:#A9C4BE;display:inline-flex;gap:8px;align-items:center}
+.m-cta .note::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.m-card{margin:0;background:rgba(255,255,255,.045);border:1px solid rgba(190,235,234,.14);border-radius:var(--r-lg);padding:6px 24px;backdrop-filter:blur(6px);min-width:0}
+.m-card div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 0;border-bottom:1px solid rgba(190,235,234,.1)}
+.m-card div:last-child{border-bottom:0}
+.m-card dt{color:#A9C4BE;font-size:13.5px;flex:0 0 auto}
+.m-card dd{margin:0;font-weight:700;text-align:right;font-size:15px;color:#F1F7F7}
+.m-card .fee dd{color:var(--accent);font-size:30px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.m-block{display:flex;flex-direction:column;gap:22px;min-width:0}
+.m-block > h3{font-size:clamp(24px,2.8vw,32px);font-weight:800;color:#fff}
+.m-block > p{max-width:62ch;margin-top:-10px}
+.m-tags{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.m-tags li{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:1px solid rgba(255,107,107,.32);background:rgba(255,107,107,.08);color:#FFD1D1;font-size:14px;font-weight:600}
+.m-tags li::before{content:"";width:6px;height:6px;border-radius:50%;background:#FF6B6B}
+.m-tags-foot{color:#F1F7F7!important;font-weight:600}
+.m-grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:700px){.m-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.m-item:last-child{grid-column:1/-1}}
+@media (min-width:1040px){.m-grid{grid-template-columns:repeat(6,minmax(0,1fr))}.m-item{grid-column:span 2}.m-item:nth-child(-n+2){grid-column:span 3}.m-item:last-child{grid-column:span 2}}
+.m-item{background:rgba(255,255,255,.04);border:1px solid rgba(190,235,234,.12);border-radius:var(--r-md);padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .3s,transform .4s var(--ease),background .3s}
+.m-item:hover{border-color:rgba(8,225,134,.4);background:rgba(8,225,134,.06);transform:translateY(-3px)}
+.m-item .mi{width:42px;height:42px;border-radius:12px;background:rgba(8,225,134,.14);color:var(--accent);display:grid;place-items:center;margin-bottom:4px}
+.m-item h4{margin:0;font-size:17px;font-weight:800;color:#fff}
+.m-item p{font-size:14.5px}
+.m-journey{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+@media (min-width:900px){.m-journey{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.m-step{position:relative;padding:24px;border-radius:var(--r-md);background:linear-gradient(180deg,rgba(8,225,134,.1),rgba(8,225,134,.02));border:1px solid rgba(8,225,134,.22);display:flex;flex-direction:column;gap:12px;min-width:0}
+.m-step .mo{font:600 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.m-step .bar{height:4px;border-radius:4px;background:rgba(190,235,234,.12);overflow:hidden}
+.m-step .bar i{display:block;height:100%;width:var(--p);border-radius:inherit;background:var(--accent);transform-origin:left;animation:fill 1.4s var(--ease) both}
+@keyframes fill{from{transform:scaleX(0)}}
+.m-step h4{margin:0;font-size:19px;font-weight:800;color:#fff}
+.m-step p{font-size:14.5px}
+.m-fit{display:grid;gap:14px}
+@media (min-width:820px){.m-fit{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}}
+.m-list{border-radius:var(--r-md);padding:26px;border:1px solid rgba(190,235,234,.12);background:rgba(255,255,255,.04);min-width:0}
+.m-list h4{margin:0 0 14px;font-size:18px;font-weight:800;color:#fff}
+.m-list ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.m-list li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#DCEBE8}
+.m-list li svg{flex:0 0 auto;margin-top:3px}
+.m-list.yes svg{color:var(--accent)}
+.m-list.no{background:rgba(255,107,107,.05);border-color:rgba(255,107,107,.2)}
+.m-list.no svg{color:#FF8A8A}
+@media (min-width:560px){.m-list.yes ul{grid-template-columns:1fr 1fr;column-gap:20px}}
+.m-join{display:grid;gap:24px;padding:32px;border-radius:var(--r-lg);background:#F1F7F7;color:var(--fg);box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+@media (min-width:1000px){.m-join{grid-template-columns:minmax(0,.62fr) minmax(0,1.6fr) auto;align-items:center;gap:36px;padding:36px 40px}}
+.m-join h3{font-size:clamp(24px,2.6vw,30px);font-weight:800}
+.m-join p{color:var(--muted)}
+.m-join ol{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+@media (min-width:640px){.m-join ol{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.m-join li{display:flex;gap:12px;align-items:flex-start;min-width:0}
+.m-join li .num{flex:0 0 auto;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--deep);color:var(--accent);font:800 13px var(--font)}
+.m-join li b{display:block;font-size:15px;line-height:1.3;margin-bottom:3px}
+.m-join li p{font-size:13.5px;line-height:1.45}
+.m-risk{font-size:12.5px;color:#7FA19A!important;max-width:90ch;margin-top:-36px}
+
 /* mobile sticky CTA */
 .mcta{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.96) 30%);transform:translateY(110%);transition:transform .4s var(--ease)}
 .mcta.show{transform:none}
@@ -323,6 +421,7 @@ footer{margin-top:96px;padding-block:56px 40px;background:var(--wash);border-top
     <nav class="nav-links" aria-label="Sections">
       <a href="#why">Why Edge</a>
       <a href="#curriculum">Curriculum</a>
+      <a href="#mentorship">Mentorship</a>
       <a href="#next">How it works</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -350,18 +449,27 @@ footer{margin-top:96px;padding-block:56px 40px;background:var(--wash);border-top
           <a class="btn btn-ghost" href="#curriculum">See the 5-stage curriculum</a>
           <span class="note">Beginners welcome. No trading experience needed.</span>
         </div>
+        <a class="m-link in-5" href="#mentorship">Already trading? See the 3-month Mentorship Program →</a>
       </div>
 
       <!-- ===== Enquiry form ===== -->
       <aside class="form-card in-3" id="enquire" aria-labelledby="fc-title">
         <div id="formView">
-          <div class="fc-head">
-            <div class="fc-top"><img class="fc-mark" src="assets/icon-192.png" alt="" width="40" height="40"><span class="tag">Course enquiry</span></div>
+          <div class="fc-head" id="fcHead">
+            <div class="fc-top"><img class="fc-mark" src="assets/icon-192.png" alt="" width="40" height="40"><span class="tag" id="fcTag">Course enquiry</span></div>
             <h2 id="fc-title">Get in touch with our team</h2>
-            <p>Share your details. A course advisor will reach you on WhatsApp to explain batches, timings and fees.</p>
+            <p id="fcLede">Share your details. A course advisor will reach you on WhatsApp to explain batches, timings and fees.</p>
           </div>
 
           <form id="leadForm" novalidate>
+            <fieldset class="prog" id="progSwitch">
+              <legend>I’m interested in</legend>
+              <div class="prog-opts">
+                <label for="progCourse"><input type="radio" id="progCourse" name="program" value="course" checked><span class="opt"><b>Forex Course</b><small>Beginner to advanced · AED 700</small></span></label>
+                <label for="progMentor"><input type="radio" id="progMentor" name="program" value="mentorship"><span class="opt"><b>Mentorship Program</b><small>For traders · 3 months · $3,000</small></span></label>
+              </div>
+            </fieldset>
+
             <div class="field" data-field="name">
               <label for="name">Full name <span class="req" aria-hidden="true">*</span></label>
               <div class="control">
@@ -397,7 +505,7 @@ footer{margin-top:96px;padding-block:56px 40px;background:var(--wash);border-top
             </div>
 
             <div class="field" data-field="job">
-              <label for="job">Job title <span class="req" aria-hidden="true">*</span></label>
+              <label for="job"><span id="jobLabelTxt">Job title</span> <span class="req" aria-hidden="true">*</span></label>
               <div class="control">
                 <span class="ic" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>
                 <input id="job" name="job" type="text" list="jobs" autocomplete="organization-title" placeholder="e.g. Sales Executive, Student" required aria-describedby="job-err" maxlength="80">
@@ -408,6 +516,18 @@ footer{margin-top:96px;padding-block:56px 40px;background:var(--wash);border-top
               <div class="err" id="job-err" aria-live="polite"></div>
             </div>
 
+            <div class="field" data-field="exp" id="expField" hidden>
+              <span class="lbl" id="exp-lbl">Trading experience <span class="req" aria-hidden="true">*</span></span>
+              <div class="exp-opts" role="radiogroup" aria-labelledby="exp-lbl" aria-describedby="exp-err">
+                <label for="exp1"><input type="radio" id="exp1" name="exp" value="Beginner / Just starting"><span>Beginner / Just starting</span></label>
+                <label for="exp2"><input type="radio" id="exp2" name="exp" value="Less than 1 year"><span>Less than 1 year</span></label>
+                <label for="exp3"><input type="radio" id="exp3" name="exp" value="1–2 years"><span>1–2 years</span></label>
+                <label for="exp4"><input type="radio" id="exp4" name="exp" value="More than 2 years"><span>More than 2 years</span></label>
+              </div>
+              <div class="exp-note" id="expNote" hidden>The mentorship is built for traders who already have experience. You can still apply, or <button type="button" class="linkbtn" id="toCourse">switch to the Forex Course</button>, which starts from the basics.</div>
+              <div class="err" id="exp-err" aria-live="polite"></div>
+            </div>
+
             <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" tabindex="-1" autocomplete="off"></div>
 
             <div class="form-alert" id="formAlert" role="alert" hidden></div>
@@ -415,7 +535,7 @@ footer{margin-top:96px;padding-block:56px 40px;background:var(--wash);border-top
             <button class="btn submit" type="submit" id="submitBtn">
               <span class="btn-label">Send details</span><span class="arr" aria-hidden="true">→</span>
             </button>
-            <p class="consent">By submitting, you agree that Edge Trading Academy may contact you by phone and WhatsApp about our courses.</p>
+            <p class="consent">By submitting, you agree that Edge Trading Academy may contact you by phone and WhatsApp about our courses and programs.</p>
           </form>
         </div>
 
@@ -527,6 +647,94 @@ footer{margin-top:96px;padding-block:56px 40px;background:var(--wash);border-top
     </div>
   </section>
 
+  <!-- ================= MENTORSHIP ================= -->
+  <section class="mentor" id="mentorship" aria-labelledby="m-title">
+    <div class="wrap">
+      <div class="m-top">
+        <div class="m-intro rv">
+          <span class="eyebrow eyebrow-dark"><span class="dot"></span>For existing traders</span>
+          <h2 id="m-title">Edge Mentorship Program<span>Rebuild your trading with personal guidance.</span></h2>
+          <p>A 3-month private mentorship for existing and serious traders struggling with repeated losses, emotional decisions, poor risk management or strategy confusion. We audit your complete trading journey, identify the real problems affecting your performance, rebuild your trading process and guide you through live-market execution.</p>
+          <div class="m-cta">
+            <a class="btn btn-primary" href="#enquire" data-focus-form data-program="mentorship">Apply for Mentorship <span class="arr" aria-hidden="true">→</span></a>
+            <span class="note">Application and assessment required</span>
+          </div>
+        </div>
+        <dl class="m-card rv" aria-label="Program details">
+          <div><dt>Duration</dt><dd>3 months</dd></div>
+          <div><dt>Format</dt><dd>Personal mentorship &amp; live-market guidance</dd></div>
+          <div><dt>Designed for</dt><dd>Existing and serious traders</dd></div>
+          <div><dt>Admission</dt><dd>Application &amp; mentor assessment</dd></div>
+          <div class="fee"><dt>Program fee</dt><dd>$3,000</dd></div>
+        </dl>
+      </div>
+
+      <div class="m-block rv">
+        <h3>This is not a beginner trading course</h3>
+        <p>You may already know charts, entries, indicators and strategies, and still struggle to produce consistent results. The problem may be:</p>
+        <ul class="m-tags">
+          <li>Overtrading or revenge trading</li><li>Poor risk and lot-size management</li><li>Strategy hopping</li><li>Emotional entries and exits</li><li>No clear trading routine</li><li>Repeating the same mistakes</li><li>Depending completely on signals</li>
+        </ul>
+        <p class="m-tags-foot">The Edge Mentorship Program is designed to identify and correct your personal trading problems.</p>
+      </div>
+
+      <div class="m-block">
+        <h3 class="rv">What you will receive</h3>
+        <div class="m-grid">
+          <article class="m-item rv"><span class="mi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span><h4>Trading journey audit</h4><p>A detailed review of your previous trades, strategy, risk, routine, psychology and loss patterns.</p></article>
+          <article class="m-item rv"><span class="mi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span><h4>Personal problem identification</h4><p>We identify whether your main issue is strategy, execution, discipline, psychology or risk management.</p></article>
+          <article class="m-item rv"><span class="mi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><h4>Strategy building</h4><p>A structured trading system built around your market, available time, capital and trading behaviour.</p></article>
+          <article class="m-item rv"><span class="mi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg></span><h4>Live-market guidance</h4><p>Learn to analyse, plan, execute, manage and review trades in real market conditions.</p></article>
+          <article class="m-item rv"><span class="mi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11"/></svg></span><h4>Performance review</h4><p>Your trades and decisions are reviewed regularly to find mistakes and improve your process.</p></article>
+        </div>
+      </div>
+
+      <div class="m-block">
+        <h3 class="rv">Your 3-month journey</h3>
+        <ol class="m-journey">
+          <li class="m-step rv"><span class="mo">Month 1</span><span class="bar" aria-hidden="true"><i style="--p:33.3%"></i></span><h4>Audit &amp; diagnosis</h4><p>Understand what went wrong and identify the habits, decisions and systems causing losses.</p></li>
+          <li class="m-step rv"><span class="mo">Month 2</span><span class="bar" aria-hidden="true"><i style="--p:66.6%"></i></span><h4>Strategy &amp; risk rebuilding</h4><p>Build clear entry, exit, stop-loss, position-sizing and daily risk rules.</p></li>
+          <li class="m-step rv"><span class="mo">Month 3</span><span class="bar" aria-hidden="true"><i style="--p:100%"></i></span><h4>Live execution &amp; refinement</h4><p>Apply the system in live markets with mentor guidance, trade reviews and continuous improvement.</p></li>
+        </ol>
+      </div>
+
+      <div class="m-fit">
+        <div class="m-list yes rv">
+          <h4>Who this program is for</h4>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Traders who already have experience</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Have faced repeated or major losses</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Are struggling with consistency</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Need personal guidance and accountability</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Want to rebuild their strategy and risk system</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Are serious about improving their process</li>
+          </ul>
+        </div>
+        <div class="m-list no rv">
+          <h4>Not suitable for</h4>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg>Complete beginners</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg>People looking only for signals</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg>Anyone expecting guaranteed profit</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg>Traders unwilling to follow risk rules</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg>People using borrowed money or emergency savings</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="m-join rv">
+        <div><h3>How to join</h3><p style="margin-top:6px">Stop repeating the same trading mistakes.</p></div>
+        <ol>
+          <li><span class="num">1</span><div><b>Submit your application</b><p>Share your trading experience and current challenges.</p></div></li>
+          <li><span class="num">2</span><div><b>Attend an assessment call</b><p>Our team understands your situation and explains the program.</p></div></li>
+          <li><span class="num">3</span><div><b>Complete enrollment</b><p>Selected traders complete payment and begin their mentorship.</p></div></li>
+        </ol>
+        <a class="btn btn-primary" href="#enquire" data-focus-form data-program="mentorship">Apply now <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+      <p class="m-risk">Trading involves significant financial risk. The program does not guarantee profits, fixed returns, or recovery of previous losses.</p>
+    </div>
+  </section>
+
   <!-- ================= NEXT STEPS ================= -->
   <section class="block" id="next">
     <div class="wrap">
@@ -552,7 +760,8 @@ footer{margin-top:96px;padding-block:56px 40px;background:var(--wash);border-top
         <div><a class="btn btn-primary" href="#enquire" data-focus-form>Get in touch <span class="arr" aria-hidden="true">→</span></a></div>
       </div>
       <div class="faq rv">
-        <details open><summary>Do I need any trading experience?<span class="pm" aria-hidden="true"></span></summary><div class="ans">No. The course starts at the Forex foundation and is designed to be simple and accessible, even for complete beginners.</div></details>
+        <details open><summary>Which program is right for me?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Choose the <strong>Forex Course</strong> if you are new to trading or want a complete foundation. Choose the <strong>Mentorship Program</strong> if you already trade but struggle with losses, discipline or risk, and want 3 months of personal guidance. Not sure? Send your details and our advisor will help you decide.</div></details>
+        <details><summary>Do I need any trading experience?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Not for the Forex Course. It starts at the foundation and is designed for complete beginners. The Mentorship Program is for traders who already have experience.</div></details>
         <details><summary>What does the AED 700 cover?<span class="pm" aria-hidden="true"></span></summary><div class="ans">The full basic-to-advanced curriculum across all five stages, live trading sessions, lifetime mentorship and access to our trading community.</div></details>
         <details><summary>How does the $100 capital support work?<span class="pm" aria-hidden="true"></span></summary><div class="ans">After you learn, you get $100 of trading capital to experience the real market. Your advisor will explain the eligibility and terms when they contact you.</div></details>
         <details><summary>What are the class timings?<span class="pm" aria-hidden="true"></span></summary><div class="ans">We run flexible batches from morning to night, so you can learn around your work or studies. Tell your advisor which time suits you.</div></details>
@@ -590,7 +799,7 @@ footer{margin-top:96px;padding-block:56px 40px;background:var(--wash);border-top
   </div>
 </footer>
 
-<div class="mcta" id="mcta"><a class="btn btn-primary" href="#enquire" data-focus-form>Send details <span class="arr" aria-hidden="true">→</span></a></div>
+<div class="mcta" id="mcta"><a class="btn btn-primary" href="#enquire" data-focus-form><span id="mctaTxt">Send details</span> <span class="arr" aria-hidden="true">→</span></a></div>
 
 <script>
 /* ============ CONFIG ============
@@ -678,17 +887,59 @@ const DEFAULT_DIAL = "971";
   const label = btn.querySelector(".btn-label"), arrow = btn.querySelector(".arr");
   const fmt = (code, v) => "+"+code+" "+digits(v);
 
+  /* ---------- Program switch (course / mentorship) ---------- */
+  const COPY = {
+    course: { tag:"Course enquiry", h:"Get in touch with our team", p:"Share your details. A course advisor will reach you on WhatsApp to explain batches, timings and fees.", btn:"Send details", job:"Job title" },
+    mentorship: { tag:"Mentorship application", h:"Apply for the Edge Mentorship Program", p:"Fill in your details. Our team will review your application and contact you with the next steps.", btn:"Apply for Mentorship", job:"Job title / Profession" }
+  };
+  const expField = $("#expField"), expNote = $("#expNote");
+  let program = "course";
+  function setProgram(p){
+    const next = p === "mentorship" ? "mentorship" : "course";
+    const changed = next !== program;
+    program = next;
+    const r = form.querySelector(`input[name="program"][value="${program}"]`); if(r) r.checked = true;
+    const c = COPY[program];
+    $("#fcTag").textContent = c.tag; $("#fc-title").textContent = c.h; $("#fcLede").textContent = c.p;
+    label.textContent = c.btn; $("#jobLabelTxt").textContent = c.job; const mt=$("#mctaTxt"); if(mt) mt.textContent = c.btn;
+    if(changed){ const h=$("#fcHead"); h.classList.remove("swap"); void h.offsetWidth; h.classList.add("swap"); }
+    if(program === "mentorship"){
+      if(expField.hidden){ expField.hidden = false; expField.classList.remove("reveal"); void expField.offsetWidth; expField.classList.add("reveal"); }
+    } else {
+      expField.hidden = true; expField.classList.remove("invalid","valid"); $("#exp-err").textContent = ""; expNote.hidden = true;
+      form.querySelectorAll('input[name="exp"]').forEach(x=>x.checked=false); touched.delete("exp");
+    }
+  }
+  function checkExp(){
+    if(program !== "mentorship") return true;
+    const v = form.querySelector('input[name="exp"]:checked');
+    const msg = v ? "" : "Choose your trading experience.";
+    expField.classList.toggle("invalid", !!msg); expField.classList.toggle("valid", !msg);
+    $("#exp-err").textContent = msg;
+    return !msg;
+  }
+  form.querySelectorAll('input[name="program"]').forEach(r=>r.addEventListener("change", ()=>setProgram(r.value)));
+  form.querySelectorAll('input[name="exp"]').forEach(r=>r.addEventListener("change", ()=>{
+    touched.add("exp"); checkExp();
+    expNote.hidden = !r.value.startsWith("Beginner");
+  }));
+  $("#toCourse").addEventListener("click", ()=>{ setProgram("course"); $("#progCourse").focus(); });
+  if(qs.get("program") === "mentorship" || location.hash === "#apply-mentorship") setProgram("mentorship");
+
   form.addEventListener("submit", async e=>{
     e.preventDefault();
     alertBox.hidden = true;
-    ["name","phone","whatsapp","job"].forEach(k=>touched.add(k));
-    const ok = [check.name(), check.phone(), check.whatsapp(), check.job()];
+    ["name","phone","whatsapp","job","exp"].forEach(k=>touched.add(k));
+    const ok = [check.name(), check.phone(), check.whatsapp(), check.job(), checkExp()];
     if(ok.includes(false)){
       const firstBad = form.querySelector(".field.invalid input");
       firstBad && firstBad.focus();
       return;
     }
+    const expPick = form.querySelector('input[name="exp"]:checked');
     const data = {
+      program: program,
+      trading_experience: program === "mentorship" && expPick ? expPick.value : "",
       name: $("#name").value.trim().replace(/\s+/g," "),
       phone: fmt(pc.value, ph.value),
       whatsapp: fmt(wc.value, wa.value),
@@ -713,39 +964,43 @@ const DEFAULT_DIAL = "971";
         if(!res.ok || (out && out.ok === false)) throw new Error(out && out.error || "Server error");
       }
       showSuccess(data, demo);
-      try{ window.dataLayer && window.dataLayer.push({event:"lead_submitted", form:"edge_course_enquiry"}); }catch(_){}
+      try{ window.dataLayer && window.dataLayer.push({event:"lead_submitted", form: program === "mentorship" ? "edge_mentorship_application" : "edge_course_enquiry"}); }catch(_){}
       try{ window.fbq && window.fbq("track","Lead"); }catch(_){}
     }catch(err){
       alertBox.innerHTML = 'We couldn’t send your details. Check your connection and try again, or message us on WhatsApp at <strong>+971 54 582 8335</strong>.';
       alertBox.hidden = false;
     }finally{
-      sp.remove(); btn.disabled=false; label.textContent="Send details"; arrow.style.display="";
+      sp.remove(); btn.disabled=false; label.textContent=COPY[program].btn; arrow.style.display="";
     }
   });
 
   function esc(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
   function showSuccess(d, demo){
     const first = d.name.split(" ")[0];
+    const isM = d.program === "mentorship";
     const v = $("#successView");
     v.innerHTML = `
       <div class="success" role="status" tabindex="-1">
         <div class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-        <h3>Thanks, ${esc(first)}. You’re on our list.</h3>
-        <p>A course advisor will message you on WhatsApp shortly with batch timings and next steps.</p>
+        <h3>${isM ? `Thanks, ${esc(first)}. Your application is in.` : `Thanks, ${esc(first)}. You’re on our list.`}</h3>
+        <p>${isM ? "Our team will review your application and contact you on WhatsApp to book your assessment call." : "A course advisor will message you on WhatsApp shortly with batch timings and next steps."}</p>
         <dl class="summary">
+          <div><dt>Program</dt><dd>${isM ? "Mentorship Program" : "Forex Course"}</dd></div>
           <div><dt>Name</dt><dd>${esc(d.name)}</dd></div>
           <div><dt>Phone</dt><dd>${esc(d.phone)}</dd></div>
           <div><dt>WhatsApp</dt><dd>${esc(d.whatsapp)}</dd></div>
           <div><dt>Job title</dt><dd>${esc(d.job_title)}</dd></div>
+          ${isM ? `<div><dt>Experience</dt><dd>${esc(d.trading_experience)}</dd></div>` : ""}
         </dl>
         ${demo ? '<p class="demo-note">Preview mode: connect the Google Sheet to start saving enquiries.</p>' : ''}
         <p style="font-size:14px">Can’t wait? Call or WhatsApp <strong style="color:var(--fg)">+971 54 582 8335</strong>.</p>
-        <button type="button" class="linkbtn" id="again">Submit another enquiry</button>
+        <button type="button" class="linkbtn" id="again">${isM ? "Submit another application" : "Submit another enquiry"}</button>
       </div>`;
     $("#formView").hidden = true; v.hidden = false;
     v.querySelector(".success").focus({preventScroll:true});
     $("#again").addEventListener("click", ()=>{
-      form.reset(); same.dispatchEvent(new Event("change")); touched.clear();
+      const keep = program; form.reset(); same.dispatchEvent(new Event("change")); touched.clear();
+      program = ""; setProgram(keep);
       form.querySelectorAll(".field").forEach(f=>{f.classList.remove("valid","invalid");});
       form.querySelectorAll(".err").forEach(e=>e.textContent="");
       [pc,wc].forEach(s=>{s.value=DEFAULT_DIAL;compact(s);});
@@ -756,6 +1011,7 @@ const DEFAULT_DIAL = "971";
   /* ---------- CTA → focus form ---------- */
   document.querySelectorAll("[data-focus-form]").forEach(a=>a.addEventListener("click",e=>{
     e.preventDefault();
+    if(a.dataset.program && $("#formView").hidden === false) setProgram(a.dataset.program);
     $("#enquire").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto":"smooth", block:"start"});
     setTimeout(()=>{ const n=$("#name"); if(n && !$("#formView").hidden) n.focus({preventScroll:true}); }, 550);
   }));

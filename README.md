@@ -1,13 +1,18 @@
 # Edge Academy enquiry page → Google Sheets
 
 ## Live setup (already connected)
-- **Google Sheet:** "Edge Academy – Course Leads" in the class@mentor.edgeacademy.ae Drive, tab **Leads**
+- **Google Sheet:** "Edge Academy – Course Leads" in the class@mentor.edgeacademy.ae Drive
   https://docs.google.com/spreadsheets/d/179OBsZMkp26KhOkWbrjyJbsBarZmD-xZgHuyJKROruI/edit
-- **Apps Script project:** "Edge Academy Lead Form" (Extensions → Apps Script from the Sheet), limited to this one spreadsheet (`@OnlyCurrentDoc`)
-- **Web App deployment:** "joinedge form v1", Execute as: class@mentor.edgeacademy.ae, Who has access: Anyone
+  - **Course Leads** tab: Forex Course enquiries (form option "Forex Course")
+  - **Mentorship Leads** tab: Edge Mentorship Program applications, with Trading experience and Assessment call columns
+- **Apps Script project:** "Edge Academy Lead Form" (Extensions → Apps Script from the Sheet), limited to this one spreadsheet (`@OnlyCurrentDoc`). Routes each submission by the `program` field (`course` or `mentorship`).
+- **Web App deployment:** "joinedge form v1", now on Version 2 ("v2 – course + mentorship tabs"). Execute as: class@mentor.edgeacademy.ae, Who has access: Anyone
 - **Endpoint used by `index.html` (`SCRIPT_URL`):**
   https://script.google.com/macros/s/AKfycbxe-6mucNLO60bpkvpJRkgli0IMId9OGi5axcFbLINgUetg-5Db2V_r9vS5W8Vp_hyEwA/exec
 - Hosting: Vercel project `joinedge`, auto-deploys from `main`.
+- Ad links can open the form on the mentorship option: `https://joinedge.vercel.app/?program=mentorship`
+
+**Updating the script later:** edit Code.gs in the Apps Script editor, run `setup` once, then Deploy → Manage deployments → pencil → Version: *New version* → Deploy. This keeps the same URL.
 
 The steps below are how this was set up, for rebuilding it on another account.
 
