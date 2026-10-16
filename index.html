@@ -197,11 +197,11 @@ form{display:flex;flex-direction:column;gap:16px}
 .linkbtn{background:none;border:0;padding:0;font:700 14px var(--font);color:var(--accent-ink);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 
 /* ---------- Ticker ---------- */
-.ticker{border-block:1px solid var(--line);overflow:hidden;background:var(--wash)}
-.ticker-track{display:flex;width:max-content;animation:marquee 46s linear infinite}
-.ticker-item{display:flex;align-items:center;gap:14px;padding:16px 28px;font:500 13px/1 var(--mono);letter-spacing:.04em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
-.ticker-item i{width:6px;height:6px;background:var(--accent);border-radius:1px;transform:rotate(45deg)}
-@keyframes marquee{to{transform:translateX(-50%)}}
+.ticker{position:relative;border-block:1px solid var(--line);background:var(--wash);min-height:46px}
+.ticker .tradingview-widget-container{min-height:44px}
+.tv-credit{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:-20px;font-size:11px;line-height:1}
+.tv-credit a{color:var(--muted);text-decoration:none}
+.tv-credit a:hover{color:var(--accent-ink);text-decoration:underline}
 
 /* ---------- Sections ---------- */
 section.block{padding-block:96px}
@@ -551,9 +551,34 @@ footer{margin-top:96px;padding-block:56px 40px;background:var(--wash);border-top
     </div>
   </section>
 
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track" id="ticker"></div>
-  </div>
+  <!-- Live prices: TradingView Ticker Tape widget -->
+  <section class="ticker" aria-label="Live market prices">
+    <div class="tradingview-widget-container" id="tvTicker">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+        "symbols": [
+          {"proName": "FX:EURUSD", "title": "EUR/USD"},
+          {"proName": "FX:GBPUSD", "title": "GBP/USD"},
+          {"proName": "FX:USDJPY", "title": "USD/JPY"},
+          {"proName": "OANDA:XAUUSD", "title": "Gold"},
+          {"proName": "FX:GBPJPY", "title": "GBP/JPY"},
+          {"proName": "FX:AUDUSD", "title": "AUD/USD"},
+          {"proName": "FX:USDCAD", "title": "USD/CAD"},
+          {"proName": "FX:USDCHF", "title": "USD/CHF"},
+          {"proName": "FX:EURJPY", "title": "EUR/JPY"},
+          {"proName": "TVC:DXY", "title": "US Dollar Index"}
+        ],
+        "showSymbolLogo": true,
+        "isTransparent": true,
+        "displayMode": "adaptive",
+        "colorTheme": "light",
+        "locale": "en"
+      }
+      </script>
+    </div>
+    <div class="tv-credit"><a href="https://www.tradingview.com/markets/currencies/" rel="noopener nofollow" target="_blank">Live prices by TradingView</a></div>
+  </section>
 
   <!-- ================= WHY ================= -->
   <section class="block" id="why">
@@ -1016,10 +1041,6 @@ const DEFAULT_DIAL = "971";
     setTimeout(()=>{ const n=$("#name"); if(n && !$("#formView").hidden) n.focus({preventScroll:true}); }, 550);
   }));
 
-  /* ---------- Ticker ---------- */
-  const words = ["EUR/USD","Support & Resistance","GBP/JPY","Fibonacci","XAU/USD","Chart analysis","USD/JPY","Supply & Demand","GBP/USD","Risk management","AUD/USD","Trade management"];
-  const row = words.map(w=>`<span class="ticker-item"><i></i>${w}</span>`).join("");
-  $("#ticker").innerHTML = row + row;
 
   /* ---------- Nav border ---------- */
   const nav = $("#nav");
